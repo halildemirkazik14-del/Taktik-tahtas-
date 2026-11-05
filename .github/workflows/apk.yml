@@ -1,0 +1,150 @@
+name: Latte Taktik APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * 1'   # her pazartesi: güncel kadrolarla yeni APK
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apk
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      TAKTIK_CERT_SHA256: 8848D6B85EB1DACAC2C0EB7DA182021279B246DB805FEA696A8747D3B954F88F
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Android SDK lisansları
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+
+      # Güvenlik: package-lock.json varsa birebir aynı sürümler kurulur. Yoksa bir kez oluşturulup depoya kaydedilir.
+      - name: Paketleri kur (kilitli sürümler)
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+            git config user.name "taktik-ci"; git config user.email "ci@lattetaktik.local"
+            git add package-lock.json
+            git commit -qm "package-lock.json: paket sürümlerini kilitle" && git push -q origin "HEAD:${GITHUB_REF_NAME}" || echo "::warning::lockfile kaydedilemedi"
+          fi
+
+      - name: Güncel kadrolar (6 lig, yedekler, fotoğraflar)
+        id: squads
+        continue-on-error: true
+        timeout-minutes: 15
+        run: node scripts/fetch-squads.mjs | tee squads-log.txt
+
+      - name: Kadro sonuçlarını ci-results dalına yaz
+        if: always()
+        run: |
+          mkdir -p /tmp/res && cp -r ci-samples/* /tmp/res/ 2>/dev/null || true
+          cp squads-log.txt /tmp/res/ 2>/dev/null || true
+          ls www/data/faces 2>/dev/null | wc -l > /tmp/res/faces-count.txt
+          du -sh www/data 2>/dev/null > /tmp/res/data-size.txt || true
+          cd /tmp/res && echo "${GITHUB_RUN_NUMBER} ${GITHUB_SHA}" > run.txt
+          git init -q && git checkout -q -b ci-results && git config user.name ci && git config user.email ci@lattetaktik.local
+          git add -A && git commit -qm "ci $GITHUB_RUN_NUMBER" && git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ci-results || true
+
+      - name: Android projesini oluştur
+        run: npx cap add android
+
+      - name: Latte Taktik ayarlarını uygula
+        run: node scripts/android-setup.mjs
+
+      - name: Uygulama simgesi ve açılış ekranı
+        continue-on-error: true
+        run: npx @capacitor/assets generate --android --iconBackgroundColor '#EFE4D6' --iconBackgroundColorDark '#2B1E17' --splashBackgroundColor '#EFE4D6' --splashBackgroundColorDark '#2B1E17'
+
+      - name: Senkronize et
+        run: npx cap sync android
+
+      # İmza: TAKTIK_KEY_PASS sırrı varsa kalıcı anahtar (güncellemeler eskisinin üstüne kurulur).
+      # Yoksa geçici anahtarla derlenir; her güncellemede eski uygulamayı silmek gerekir.
+      - name: İmza anahtarını aç
+        id: key
+        env:
+          TAKTIK_KEY_PASS: ${{ secrets.TAKTIK_KEY_PASS }}
+        run: |
+          if [ -z "$TAKTIK_KEY_PASS" ]; then
+            echo "::warning::TAKTIK_KEY_PASS sırrı yok. APK geçici anahtarla imzalanacak."
+            echo "mode=debug" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          openssl enc -d -aes-256-cbc -pbkdf2 -iter 600000 \
+            -in android-keystore/taktik-release.p12.enc \
+            -out "$RUNNER_TEMP/taktik.p12" -pass env:TAKTIK_KEY_PASS
+          echo "TAKTIK_KEYSTORE=$RUNNER_TEMP/taktik.p12" >> "$GITHUB_ENV"
+          echo "mode=release" >> "$GITHUB_OUTPUT"
+
+      - name: APK derle
+        working-directory: android
+        env:
+          TAKTIK_KEY_PASS: ${{ secrets.TAKTIK_KEY_PASS }}
+        run: |
+          chmod +x gradlew
+          if [ "${{ steps.key.outputs.mode }}" = "release" ]; then
+            ./gradlew assembleRelease --no-daemon --stacktrace
+            cp app/build/outputs/apk/release/app-release.apk ../LatteTaktik.apk
+          else
+            ./gradlew assembleDebug --no-daemon --stacktrace
+            cp app/build/outputs/apk/debug/app-debug.apk ../LatteTaktik.apk
+          fi
+
+      - name: İmza anahtarını sil
+        if: always()
+        run: rm -f "$RUNNER_TEMP/taktik.p12"
+
+      - name: APK kontrolü
+        run: |
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+          "$BT/apksigner" verify --print-certs LatteTaktik.apk | tee sign.txt
+          if [ "${{ steps.key.outputs.mode }}" = "release" ]; then
+            GOT=$(grep -m1 'certificate SHA-256 digest' sign.txt | awk '{print toupper($NF)}')
+            if [ "$GOT" != "$TAKTIK_CERT_SHA256" ]; then echo "::error::APK yanlış anahtarla imzalı ($GOT)"; exit 1; fi
+            if "$BT/aapt" dump badging LatteTaktik.apk | grep -q application-debuggable; then echo "::error::APK hata ayıklama modunda"; exit 1; fi
+          fi
+
+      - name: Sürüm notları
+        run: |
+          {
+            echo "Telefonundan **LatteTaktik.apk** dosyasına dokunup indir ve kur."
+            echo; echo "Boyut: $(du -h LatteTaktik.apk | cut -f1)"
+            if [ "${{ steps.key.outputs.mode }}" != "release" ]; then
+              echo; echo "> Bu sürüm geçici anahtarla imzalı. Kurarken \"paket çakışıyor\" uyarısı alırsan önce eski Latte Taktik'i sil. (Projelerini önce Projeler → Dosyaya kaydet ile yedekle.)"
+            fi
+            echo; echo '<details><summary>Kadro raporu</summary>'; echo; echo '```'
+            cat ci-samples/squads-report.json 2>/dev/null || echo "Kadrolar alınamadı; uygulama yedek kadroyla çalışır."
+            echo '```'; echo '</details>'
+          } > release-notes.md
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: LatteTaktik-APK
+          path: LatteTaktik.apk
+
+      - name: Sürüm yayınla (telefondan indirmek için)
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: Latte Taktik v1.0.${{ github.run_number }}
+          body_path: release-notes.md
+          files: LatteTaktik.apk
+          make_latest: true

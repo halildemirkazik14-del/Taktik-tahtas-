@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#EFE4D6">
+<title>Latte Taktik</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <button class="tb" id="bProjects" aria-label="Projeler"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+    <button class="tb txt" id="bMatch">Maç</button>
+    <button class="tb txt" id="bSquad">Kadro</button>
+    <button class="tb" id="bView" aria-label="Görünüm ve ayarlar"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
+    <span class="grow"></span>
+    <span id="recTime" hidden>00:00</span>
+    <button id="bRec" aria-label="Kayda başla"><i></i><span>Kayıt</span></button>
+  </header>
+
+  <main id="stageWrap">
+    <div id="stage">
+      <canvas id="gl"></canvas>
+      <canvas id="ov" width="1080" height="1920"></canvas>
+      <div id="camBox">
+        <button class="fab" id="bCam" aria-label="Kamera açısı"><svg viewBox="0 0 24 24"><path d="M3 8h3l2-3h8l2 3h3v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg></button>
+        <button class="fab" id="bLock" aria-label="Kamerayı kilitle"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
+        <div id="camMenu" hidden></div>
+      </div>
+      <div id="pop" hidden></div>
+      <div id="count" hidden>3</div>
+    </div>
+  </main>
+
+  <footer id="dock">
+    <div class="row tools" id="tools"></div>
+    <div class="row">
+      <div id="colors"></div>
+      <span class="grow"></span>
+      <button class="mini" id="bUndo" aria-label="Geri al"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg></button>
+      <button class="mini" id="bClear" aria-label="Bu adımın çizimlerini temizle"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button>
+    </div>
+    <div class="row steps">
+      <button class="play" id="bPlay" aria-label="Adımları oynat"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></button>
+      <div id="stepChips"></div>
+      <button class="mini" id="bAddStep" aria-label="Adım ekle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <button class="mini" id="bStepMenu" aria-label="Adım ayarları"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></button>
+    </div>
+  </footer>
+</div>
+
+<div id="sheet" hidden><div class="sh" role="dialog" aria-modal="true"><div class="grab"></div><div id="shBody"></div></div></div>
+<div id="toast" hidden></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+node_modules/
+android/
+*.apk
+.DS_Store
+ci-samples/
+# derleme sırasında ESPN'den gelen veri
+www/data/squads.json
+www/data/logos/
+www/data/faces/
+# Güvenlik: şifresiz imza anahtarları asla depoya girmesin (yalnızca .enc)
+*.keystore
+*.jks
+*.p12

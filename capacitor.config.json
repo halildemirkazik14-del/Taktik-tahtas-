@@ -1,0 +1,8 @@
+{
+  "appId": "com.lattetaktik.app",
+  "appName": "Latte Taktik",
+  "webDir": "www",
+  "server": { "androidScheme": "https" },
+  "android": { "backgroundColor": "#EFE4D6" },
+  "plugins": { "CapacitorHttp": { "enabled": false } }
+}
