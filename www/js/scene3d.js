@@ -14,7 +14,7 @@ export const THEMES = {
 
 export const CAMS = {
   ustten: { label: 'Üstten', p: [0, 186, -2.2], t: [0, 0, -3.5] },
-  taktik: { label: 'Taktik', p: [0, 112, 96], t: [0, 0, -3] },
+  taktik: { label: 'Taktik', p: [0, 124, 108], t: [0, 0, -3] },
   yayin: { label: 'Yayın', p: [0, 40, 86], t: [0, 0, -8] },
   kale: { label: 'Kale arkası', p: [0, 9, 70], t: [0, 2, 24] },
   rakip: { label: 'Rakip kale', p: [0, 9, -70], t: [0, 2, -24] },
