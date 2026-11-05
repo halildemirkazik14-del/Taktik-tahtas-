@@ -3,6 +3,7 @@
 // Bir lig çekilemezse uygulama js/fallback.js içindeki elle derlenmiş kadroya düşer.
 import fs from 'node:fs';
 import path from 'node:path';
+import { rank, guessFormation } from '../www/js/data.js';
 
 const LEAGUES = [
   ['tur.1', 'Süper Lig'], ['eng.1', 'Premier Lig'], ['esp.1', 'La Liga'],
@@ -97,6 +98,29 @@ for (const [slug, lname] of LEAGUES) {
   console.log(`   ${lg.teams.length} takım, ${okTeams} tanesinde kadro var`);
   if (lg.teams.length && okTeams >= Math.max(1, lg.teams.length * 0.6)) out.leagues[slug] = lg;
 }
+
+// Her takımın son oynadığı lig maçındaki ilk 11 ve diziliş → uygulamada varsayılan "olası 11"
+let lastOk = 0;
+const allTeams = Object.entries(out.leagues).flatMap(([slug, lg]) => lg.teams.map((t) => [slug, t]));
+await pool(allTeams, 6, async ([slug, t]) => {
+  const sc = await get(`${API}/${slug}/teams/${t.id}/schedule`, 'json', 2);
+  const ev = (sc?.events || []).filter((e) => e?.competitions?.[0]?.status?.type?.completed).sort((a, b) => String(a.date).localeCompare(String(b.date))).pop();
+  if (!ev) return;
+  const sm = await get(`${API}/${slug}/summary?event=${ev.id}`, 'json', 2);
+  const r = (sm?.rosters || []).find((x) => String(x.team?.id) === t.id);
+  const st = (r?.roster || []).filter((x) => x.starter && x.athlete?.id).map((x) => ({ id: String(x.athlete.id), pa: x.position?.abbreviation || '', g: group(x.position?.abbreviation, x.position?.name) }));
+  if (st.length !== 11) return;
+  const c = ev.competitions[0].competitors || [];
+  const opp = c.find((x) => String(x.team?.id) !== t.id);
+  const form = (r.formation || '').replace(/\s/g, '') || guessFormation(st.map((x) => ({ ...x, r: rank(x.pa, x.g) })));
+  t.last = { form, st, ev: String(ev.id), date: ev.date, vs: opp?.team?.displayName || '' };
+  // maç kadrosunda olup kadro listesinde olmayan oyuncuyu ekle
+  for (const x of r.roster) if (x.athlete?.id && !t.players.find((p) => p.id === String(x.athlete.id)))
+    t.players.push({ id: String(x.athlete.id), n: x.athlete.displayName || '', s: x.athlete.shortName || x.athlete.displayName || '', no: x.jersey != null ? String(x.jersey) : '', g: group(x.position?.abbreviation, x.position?.name), pa: '', f: 0 });
+  lastOk++;
+});
+report.lastXI = lastOk;
+console.log(`Son maç ilk 11'i: ${lastOk}/${allTeams.length} takım`);
 
 // Armalar (küçültülmüş) — yerel dosya olunca 3D ve kayıt için güvenli
 await pool(logoJobs, 8, async ([id, href]) => {

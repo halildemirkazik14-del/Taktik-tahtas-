@@ -137,10 +137,21 @@ function slotXZ(side, form, i) {
 function slotKeys(side) { return Array.from({ length: 11 }, (_, i) => side + i); }
 function sides() { return P.A ? ['H', 'A'] : ['H']; }
 
+// takımın son maçtaki dizilişi (yoksa verilen ya da 4-2-3-1)
+function defForm(lg, id, fb) { const f = D.team(lg, id)?.last?.form; return f && formSlots(f).length === 11 && /^\d(-\d){2,4}$/.test(f) ? f : (fb || '4-2-3-1'); }
 // dizilişe göre otomatik ilk 11
 function autoXI(side, form) {
   const sq = squad(side); const used = new Set(); const out = Array(11).fill(null);
-  const sorted = [...sq].sort((a, b) => (a.xi ?? 99) - (b.xi ?? 99) || ((+a.no || 99) - (+b.no || 99)));
+  // son maçın ilk 11'i varsa: aynı dizilişte birebir yerleştir, farklı dizilişte bu oyunculara öncelik ver
+  const last = teamOf(side)?.last; const ids = new Set(sq.map((p) => p.id));
+  if (last && last.st?.length === 11 && last.st.every((x) => ids.has(x.id))) {
+    const lf = last.form && formSlots(last.form).length === 11 ? last.form : '';
+    if (lf && lf === form) return D.placeStarters(formSlots(form), form, last.st.map((x) => ({ ...x, r: D.rank(x.pa, x.g) })));
+  }
+  const pref = new Set(last?.st?.map((x) => x.id) || []);
+  const lastPa = new Map((last?.st || []).map((x) => [x.id, x.pa]));
+  const sorted = [...sq].map((p) => (lastPa.get(p.id) ? { ...p, pa: lastPa.get(p.id) } : p))
+    .sort((a, b) => (pref.has(b.id) - pref.has(a.id)) || (a.xi ?? 99) - (b.xi ?? 99) || ((+a.no || 99) - (+b.no || 99)));
   const xs = formSlots(form);
   // önce her mevki grubu için oyuncu seç, sonra grubun içinde sağ-sol sırasına göre yuvalara diz
   for (const g of ['G', 'D', 'M', 'F']) {
@@ -164,8 +175,9 @@ function baseStep() {
 // ---------------- proje ----------------
 function newProject(opts = {}) {
   const tr = D.teams('tur.1');
-  const H = opts.H || { lg: 'tur.1', team: (D.findTeamByName('tur.1', /fenerbah/i) || tr[0]).id, form: '4-2-3-1' };
-  const A = opts.A === null ? null : opts.A || { lg: 'tur.1', team: (D.findTeamByName('tur.1', /galatasaray/i) || tr[1]).id, form: '4-2-3-1' };
+  const fbT = (D.findTeamByName('tur.1', /fenerbah/i) || tr[0]).id, gsT = (D.findTeamByName('tur.1', /galatasaray/i) || tr[1]).id;
+  const H = opts.H || { lg: 'tur.1', team: fbT, form: defForm('tur.1', fbT) };
+  const A = opts.A === null ? null : opts.A || { lg: 'tur.1', team: gsT, form: defForm('tur.1', gsT) };
   P = { v: 1, id: uid(), name: opts.name || 'Yeni taktik', mode: opts.mode || 'free', created: Date.now(), updated: Date.now(),
     H, A, match: null, score: ['', ''], title: '', custom: {}, extra: {}, ext: {}, subs: [], realSubs: [], steps: [] };
   P.steps = [baseStep()]; cur = 0; undo = [];
@@ -546,7 +558,7 @@ function dataNote() {
 function setTeam(side, lg, id) {
   snapshot();
   if (side === 'A' && !lg) { P.A = null; }
-  else { const prevForm = P[side]?.form || '4-2-3-1'; P[side] = { lg, team: String(id), form: prevForm }; }
+  else { P[side] = { lg, team: String(id), form: defForm(lg, id, P[side]?.form) }; }
   P.match = null; P.subs = []; P.realSubs = []; P.steps = [baseStep()]; cur = 0; full(); persist();
 }
 function setForm(side, form) {
@@ -588,7 +600,7 @@ async function applyFixture(ev) {
   snapshot(); const schedLg = P.H.lg;
   const resolve = (side, info) => {
     const f = findTeamAnywhere(info.id, info.name);
-    if (f) return { lg: f.lg, team: f.t.id, form: P[side]?.form || '4-2-3-1' };
+    if (f) return { lg: f.lg, team: f.t.id, form: defForm(f.lg, f.t.id, P[side]?.form) };
     P.ext[info.id] = { id: info.id, name: info.name, short: info.name, color: side === 'H' ? '#8B5E3C' : '#22375A', alt: '#FFFFFF', players: [] };
     return { lg: P.H.lg, team: info.id, form: '4-2-3-1' };
   };
@@ -614,9 +626,7 @@ async function applySummary(eventId, homeId, only) {
     for (const p of [...m.starters[s], ...(m.bench[s] || [])]) if (!known.has(p.id)) { P.extra[t.id].push({ id: p.id, n: p.n, s: p.s, no: p.no, g: p.g, pa: p.pa, f: 0, img: p.img }); known.add(p.id); }
     if (m.formation[s]) P[s].form = m.formation[s].replace(/\s/g, '');
     // yuvalara yerleştir: derinlik ve sağ-sol sırasına göre
-    const slots = formSlots(P[s].form).map((v, i) => ({ i, d: v[1], x: v[0] })).sort((a, b) => a.d - b.d || a.x - b.x);
-    const st = m.starters[s].slice(0, 11); const on = Array(11).fill(null);
-    slots.forEach((sl, k) => { if (st[k]) on[sl.i] = st[k].id; });
+    const on = D.placeStarters(formSlots(P[s].form), P[s].form, m.starters[s].slice(0, 11));
     for (const step of P.steps) { step.on[s] = [...on]; slotKeys(s).forEach((k, i) => (step.pos[k] = slotXZ(s, P[s].form, i))); }
   }
   if (!only) { P.realSubs = m.subs.filter((x) => x.in && x.out); if (m.score[0] !== '') P.score = m.score; }
@@ -665,7 +675,7 @@ function renderSquad(side) {
     try {
       const tt = teamOf(side); const evs = await D.schedule(P[side].lg, tt.id); const last = evs.filter((e) => e.completed).pop();
       if (!last) throw new Error('Oynanmış maç yok');
-      snapshot(); const prevH = P.H; void prevH;
+      snapshot();
       const homeIsUs = String(last.home.id) === String(tt.id);
       const m = await D.matchSummary(P[side].lg, last.id, last.home.id);
       const ms = homeIsUs ? 'H' : 'A';
@@ -673,9 +683,7 @@ function renderSquad(side) {
       P.extra[tt.id] ||= []; const known = new Set(squad(side).map((p) => p.id));
       for (const p of [...m.starters[ms], ...(m.bench[ms] || [])]) if (!known.has(p.id)) { P.extra[tt.id].push({ id: p.id, n: p.n, s: p.s, no: p.no, g: p.g, pa: p.pa, f: 0, img: p.img }); known.add(p.id); }
       if (m.formation[ms]) P[side].form = m.formation[ms].replace(/\s/g, '');
-      const slots = formSlots(P[side].form).map((v, i) => ({ i, d: v[1], x: v[0] })).sort((a, c) => a.d - c.d || a.x - c.x);
-      const on = Array(11).fill(null); slots.forEach((sl, k) => { if (m.starters[ms][k]) on[sl.i] = m.starters[ms][k].id; });
-      if (side === 'A') for (let i = 0; i < 11; i++) void i;
+      const on = D.placeStarters(formSlots(P[side].form), P[side].form, m.starters[ms].slice(0, 11));
       for (const s of P.steps) { s.on[side] = [...on]; slotKeys(side).forEach((k, i) => (s.pos[k] = slotXZ(side, P[side].form, i))); }
       full(); persist(); toast(`Son maçın 11'i yüklendi: ${last.home.name} ${last.home.score}–${last.away.score} ${last.away.name}`); renderSquad(side);
     } catch (e) { toast('Yüklenemedi: ' + e.message); b.disabled = false; b.textContent = "Son maçın 11'ini yükle"; }

@@ -25,10 +25,40 @@ export async function loadSquads() {
   for (const slug of LEAGUE_ORDER) {
     const p = pick(slug);
     DB.leagues[slug] = { ...p.lg, name: LEAGUE_NAMES[slug], src: p.src };
+    if (p.src !== 'fallback') fixTeams(slug, DB.leagues[slug]);
     srcs.add(p.src); if (String(p.upd) > newest) newest = String(p.upd);
   }
   DB.updated = newest; DB.source = [...srcs].join('+');
   return DB;
+}
+
+// ESPN takım adlarında Türkçe karakter yok, bazı renkler siyah/siyah geliyor:
+// elle derlenmiş listeden (fallback) eşleşen takımın adını (Süper Lig) ve forma renklerini al
+const STOP = new Set(['fc', 'cf', 'sk', 'ac', 'as', 'afc', 'sc', 'sv', 'ssc', 'us', 'rc', 'ogc', 'losc', 'stade', 'de', 'la', 'club', 'bb', 'fk', 'sfk', 'vfb', 'vfl', 'tsg', 'the', 'cd', 'ud', 'rcd', 'ca', 'calcio', 'and', 'hove', 'albion']);
+const ALIAS = { cologne: 'koln', rennais: 'rennes', brestois: 'brest', munich: 'munchen', internazionale: 'inter', saintgermain: 'psg' };
+const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i').replace(/[^a-z0-9 ]+/g, ' ');
+const toks = (s) => norm(s).split(/\s+/).map((w) => ALIAS[w] || w).filter((w) => w.length >= 3 && !STOP.has(w) && !/^\d+$/.test(w));
+function matchScore(a, b) {
+  const A = toks(a), B = toks(b); if (!A.length || !B.length) return 0;
+  if (A.join(' ') === B.join(' ')) return 10;
+  let s = 0; for (const x of A) for (const y of B) { if (x === y) s += 2; else if (x.length >= 4 && y.length >= 4 && (x.includes(y) || y.includes(x))) s += 1.5; }
+  return s / Math.sqrt(A.length * B.length);
+}
+function fixTeams(slug, lg) {
+  const fb = FALLBACK.leagues[slug]?.teams || []; const used = new Set();
+  const pairs = [];
+  for (const t of lg.teams) for (const f of fb) { const s = matchScore(t.name, f.name); if (s > 0.9) pairs.push([s, t, f]); }
+  pairs.sort((a, b) => b[0] - a[0]);
+  const done = new Set();
+  for (const [, t, f] of pairs) {
+    if (done.has(t.id) || used.has(f.id)) continue; done.add(t.id); used.add(f.id);
+    t.color = f.color; t.alt = f.alt;
+    if (slug === 'tur.1') { t.name = f.name; t.short = f.name; }
+  }
+  for (const t of lg.teams) { // eşleşmeyen ve rengi bozuk olanlar
+    if (!done.has(t.id) && (!t.color || t.color === t.alt)) { t.alt = t.color && t.color.toLowerCase() !== '#ffffff' ? '#FFFFFF' : '#22375A'; t.color = t.color || '#8B5E3C'; }
+  }
+  lg.teams.sort((a, b) => a.name.localeCompare(b.name, 'tr'));
 }
 
 export function team(slug, id) { return DB.leagues[slug]?.teams.find((t) => t.id === String(id)) || null; }
@@ -99,7 +129,7 @@ export async function refreshSquads(onProgress) {
         });
         lg.teams.push({ id: String(t.id), name: t.displayName || t.name, short: t.shortDisplayName || t.name, abbr: t.abbreviation || '',
           color: t.color ? '#' + t.color : prev?.color || '', alt: t.alternateColor ? '#' + t.alternateColor : prev?.alt || '',
-          logo: prev?.logo || 0, logoUrl: t.logos?.[0]?.href || '', players: players.length ? players : (prev?.players || []) });
+          logo: prev?.logo || 0, logoUrl: t.logos?.[0]?.href || '', last: prev?.last, players: players.length ? players : (prev?.players || []) });
         done++; onProgress && onProgress(done, total, LEAGUE_NAMES[slug]);
       }
     }));
@@ -130,12 +160,40 @@ export async function schedule(slug, teamId) {
 }
 
 // Mevki kısaltmasından derinlik ve yan bilgisi
-function rank(abbr = '', g = 'M') {
+export function rank(abbr = '', g = 'M') {
   const a = abbr.toUpperCase();
   let d = { G: 0, D: 1, M: 3, F: 5 }[g] ?? 3;
   if (/WB/.test(a)) d = 1.6; else if (/^(DM|CDM)/.test(a)) d = 2; else if (/^(AM|CAM)/.test(a)) d = 4; else if (/^(LW|RW|LM|RM)$/.test(a)) d = g === 'F' ? 4.6 : 3.2;
-  let lat = 0; if (/(^L|-L$|L$)/.test(a) && !/^CDM/.test(a)) lat = -1; if (/(^R|-R$|R$)/.test(a)) lat = 1;
+  let lat = 0;
+  if (/^L/.test(a)) lat = -2; else if (/-L$/.test(a)) lat = -1;
+  if (/^R/.test(a)) lat = 2; else if (/-R$/.test(a)) lat = 1;
   return [d, lat];
+}
+// İlk 11'i diziliş yuvalarına yerleştir: hatlara böl, her hatta soldan sağa diz
+export function placeStarters(slots, form, starters) {
+  const on = Array(11).fill(null); if (!starters.length) return on;
+  const st = [...starters].sort((a, b) => a.r[0] - b.r[0] || a.r[1] - b.r[1]);
+  const gk = st.find((x) => x.r[0] === 0) || st[0];
+  on[0] = gk.id;
+  const rest = st.filter((x) => x !== gk);
+  let lines = String(form || '').split('-').map((n) => parseInt(n, 10)).filter((n) => n > 0);
+  if (lines.reduce((a, b) => a + b, 0) !== 10) lines = [10];
+  const order = [...Array(10).keys()].map((i) => i + 1).sort((a, b) => slots[a][1] - slots[b][1] || slots[a][0] - slots[b][0]);
+  let k = 0;
+  for (const n of lines) {
+    const sl = order.slice(k, k + n).sort((a, b) => slots[a][0] - slots[b][0]);
+    const pl = rest.slice(k, k + n).sort((a, b) => a.r[1] - b.r[1]);
+    sl.forEach((si, j) => { if (pl[j]) on[si] = pl[j].id; });
+    k += n;
+  }
+  return on;
+}
+// ESPN diziliş vermezse ilk 11'in mevkilerinden tahmin et (ör. 4-2-3-1)
+export function guessFormation(st) {
+  const lines = { d: 0, dm: 0, m: 0, am: 0, f: 0 };
+  for (const x of st) { const d = x.r[0]; if (d === 0) continue; if (d <= 1.6) lines.d++; else if (d === 2) lines.dm++; else if (d < 4) lines.m++; else if (d < 5) lines.am++; else lines.f++; }
+  const out = [lines.d, lines.dm, lines.m, lines.am, lines.f].filter((n) => n > 0);
+  return out.reduce((a, b) => a + b, 0) === 10 ? out.join('-') : '';
 }
 export async function matchSummary(slug, eventId, homeId) {
   const d = await getJSON(`${API}/${slug}/summary?event=${eventId}`);
@@ -148,17 +206,23 @@ export async function matchSummary(slug, eventId, homeId) {
   }
   for (const r of d?.rosters || []) {
     const s = String(r.team?.id) === String(homeId) || r.homeAway === 'home' ? 'H' : 'A';
-    res.formation[s] = r.formation || '';
     const list = (r.roster || []).map((x) => ({
       id: String(x.athlete?.id || ''), n: x.athlete?.displayName || '', s: x.athlete?.shortName || x.athlete?.displayName || '',
       no: x.jersey != null ? String(x.jersey) : '', g: group(x.position?.abbreviation, x.position?.name), pa: x.position?.abbreviation || '',
       img: x.athlete?.headshot?.href || '', starter: !!x.starter, fp: parseInt(x.formationPlace || '0', 10) || 0, subIn: !!x.subbedIn, subOut: !!x.subbedOut,
+      inFor: x.subbedInFor?.athlete?.id ? String(x.subbedInFor.athlete.id) : '',
+      subMin: (x.plays || []).find((pl) => pl.substitution)?.clock?.displayValue || '',
     })).filter((x) => x.id);
     const st = list.filter((x) => x.starter).map((x) => ({ ...x, r: rank(x.pa, x.g) }));
     st.sort((a, b) => a.r[0] - b.r[0] || a.r[1] - b.r[1] || a.fp - b.fp);
     res.starters[s] = st; res.bench[s] = list.filter((x) => !x.starter);
+    res.formation[s] = (r.formation || '').replace(/\s/g, '') || guessFormation(st);
+    // değişiklikler: giren oyuncunun kaydında kimin yerine ve hangi dakikada girdiği yazıyor
+    for (const x of list) if (x.subIn && x.inFor) res.subs.push({ side: s, min: x.subMin, in: x.id, out: x.inFor });
   }
-  // Oyuncu değişiklikleri (dakika ile)
+  res.subs.sort((a, b) => (parseInt(a.min, 10) || 0) - (parseInt(b.min, 10) || 0));
+  if (res.subs.length) return res;
+  // Yedek yol: olay listesinden değişiklikler
   const evs = [...(d?.keyEvents || []), ...(d?.commentary || []).map((c) => c.play).filter(Boolean)];
   const seen = new Set();
   for (const e of evs) {
