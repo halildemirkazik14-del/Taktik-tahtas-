@@ -1,0 +1,44 @@
+{
+  "updated": "2026-11-09T11:39:12.109Z",
+  "leagues": {
+    "tur.1": {
+      "name": "Süper Lig",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 530
+    },
+    "eng.1": {
+      "name": "Premier Lig",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 603
+    },
+    "esp.1": {
+      "name": "La Liga",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 628
+    },
+    "ita.1": {
+      "name": "Serie A",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 655
+    },
+    "ger.1": {
+      "name": "Bundesliga",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 541
+    },
+    "fra.1": {
+      "name": "Ligue 1",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 529
+    }
+  },
+  "lastXI": 114,
+  "faces": 117,
+  "logos": 114
+}

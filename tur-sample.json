@@ -1,0 +1,1994 @@
+[
+ {
+  "id": "9078",
+  "name": "Alanyaspor",
+  "short": "Alanyaspor",
+  "abbr": "ALA",
+  "color": "#000000",
+  "alt": "#000000",
+  "logo": 1,
+  "players": [
+   {
+    "id": "143774",
+    "n": "Paulo Victor",
+    "s": "Paulo Victor",
+    "no": "48",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "387503",
+    "n": "Mert Bayram",
+    "s": "M. Bayram",
+    "no": "23",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "418442",
+    "n": "Mahmut Can Kara",
+    "s": "M. Can Kara",
+    "no": "1",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "202173",
+    "n": "Fidan Aliti",
+    "s": "F. Aliti",
+    "no": "5",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "212334",
+    "n": "Florent Hadergjonaj",
+    "s": "F. Hadergjonaj",
+    "no": "94",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "240971",
+    "n": "Fatih Aksoy",
+    "s": "F. Aksoy",
+    "no": "20",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "324561",
+    "n": "Nuno Lima",
+    "s": "Nuno Lima",
+    "no": "3",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "337894",
+    "n": "Bedirhan Özyurt",
+    "s": "B. Özyurt",
+    "no": "4",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "340656",
+    "n": "Sahin Dik",
+    "s": "S. Dik",
+    "no": "28",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3126775",
+    "n": "Bilal Demirağ",
+    "s": "B. Demirağ",
+    "no": "44",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3128639",
+    "n": "Eymen Karataş",
+    "s": "E. Karataş",
+    "no": "93",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "5326660",
+    "n": "Oğuz Baran Arslan",
+    "s": "O. Arslan",
+    "no": "56",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "5326661",
+    "n": "Kartal Kaan Yiğit",
+    "s": "K. Yiğit",
+    "no": "57",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "238638",
+    "n": "Emre Demir",
+    "s": "E. Demir",
+    "no": "14",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "240062",
+    "n": "Ianis Hagi",
+    "s": "I. Hagi",
+    "no": "10",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "259139",
+    "n": "Paolo Fernandes",
+    "s": "P. Fernandes",
+    "no": "22",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "290205",
+    "n": "Enes Keskin",
+    "s": "E. Keskin",
+    "no": "8",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "297014",
+    "n": "Gaïus Makouta",
+    "s": "G. Makouta",
+    "no": "42",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "297033",
+    "n": "Maestro",
+    "s": "Maestro",
+    "no": "58",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "308850",
+    "n": "Yusuf Ozdemir",
+    "s": "Y. Ozdemir",
+    "no": "88",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "322811",
+    "n": "Izzet Celik",
+    "s": "I. Celik",
+    "no": "26",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "346891",
+    "n": "Baran Gezek",
+    "s": "B. Gezek",
+    "no": "55",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "3126750",
+    "n": "Arouna Kigbafory Soro",
+    "s": "A. Kigbafory Soro",
+    "no": "32",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "232492",
+    "n": "Meschack Elia",
+    "s": "M. Elia",
+    "no": "12",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "236628",
+    "n": "Hwang Ui-Jo",
+    "s": "H. Ui-Jo",
+    "no": "16",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "349018",
+    "n": "Ruan",
+    "s": "Ruan",
+    "no": "11",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "362717",
+    "n": "Iván Cédric",
+    "s": "I. Cédric",
+    "no": "19",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "387821",
+    "n": "Ibrahim Kaya",
+    "s": "I. Kaya",
+    "no": "7",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "392055",
+    "n": "Arda Usluoglu",
+    "s": "A. Usluoglu",
+    "no": "17",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "397071",
+    "n": "Omar Ben Ali",
+    "s": "O. Ben Ali",
+    "no": "9",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   }
+  ],
+  "last": {
+   "form": "3-4-3",
+   "st": [
+    {
+     "id": "143774",
+     "pa": "G",
+     "g": "G"
+    },
+    {
+     "id": "337894",
+     "pa": "CD",
+     "g": "D"
+    },
+    {
+     "id": "202173",
+     "pa": "CD-L",
+     "g": "D"
+    },
+    {
+     "id": "324561",
+     "pa": "CD-R",
+     "g": "D"
+    },
+    {
+     "id": "346891",
+     "pa": "CM-L",
+     "g": "M"
+    },
+    {
+     "id": "297033",
+     "pa": "CM-R",
+     "g": "M"
+    },
+    {
+     "id": "308850",
+     "pa": "LM",
+     "g": "M"
+    },
+    {
+     "id": "212334",
+     "pa": "RM",
+     "g": "M"
+    },
+    {
+     "id": "392055",
+     "pa": "F",
+     "g": "F"
+    },
+    {
+     "id": "236628",
+     "pa": "CF-L",
+     "g": "F"
+    },
+    {
+     "id": "349018",
+     "pa": "CF-R",
+     "g": "F"
+    }
+   ],
+   "ev": "401888254",
+   "date": "2026-11-08T15:30Z",
+   "vs": "Trabzonspor"
+  }
+ },
+ {
+  "id": "132335",
+  "name": "Amed SFK",
+  "short": "Amed SFK",
+  "abbr": "AMED",
+  "color": "#000000",
+  "alt": "#C60000",
+  "logo": 1,
+  "players": [
+   {
+    "id": "231282",
+    "n": "Alban Lafont",
+    "s": "A. Lafont",
+    "no": "40",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "297997",
+    "n": "Mustafa Burak Boznan",
+    "s": "M. Boznan",
+    "no": "27",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "346928",
+    "n": "Muhammed Damar",
+    "s": "M. Damar",
+    "no": "",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "3105618",
+    "n": "Yakup Gi̇Ri̇Şen",
+    "s": "Y. Gi̇Ri̇Şen",
+    "no": "",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "190262",
+    "n": "David Bates",
+    "s": "D. Bates",
+    "no": "4",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "240381",
+    "n": "Kahraman Demirtapa",
+    "s": "K. Demirtapa",
+    "no": "47",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "272195",
+    "n": "Umut Meras",
+    "s": "U. Meras",
+    "no": "17",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "275141",
+    "n": "Mehmet Yesil",
+    "s": "M. Yesil",
+    "no": "21",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "289594",
+    "n": "Lumbardh Dellova",
+    "s": "L. Dellova",
+    "no": "5",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "345238",
+    "n": "Ali Bülbül",
+    "s": "A. Bülbül",
+    "no": "81",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "397220",
+    "n": "Amadou Cissé",
+    "s": "A. Cissé",
+    "no": "33",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3105616",
+    "n": "Miraç Acer",
+    "s": "M. Acer",
+    "no": "3",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "108251",
+    "n": "Gökhan Gül",
+    "s": "G. Gül",
+    "no": "18",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "168385",
+    "n": "Dia Saba",
+    "s": "D. Saba",
+    "no": "91",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "204793",
+    "n": "Furkan Soyalp",
+    "s": "F. Soyalp",
+    "no": "8",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "213101",
+    "n": "Rayan Raveloson",
+    "s": "R. Raveloson",
+    "no": "22",
+    "g": "M",
+    "pa": "M",
+    "f": 1
+   },
+   {
+    "id": "345431",
+    "n": "Cem Üstündag",
+    "s": "C. Üstündag",
+    "no": "6",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "350957",
+    "n": "Berk Kizildemir",
+    "s": "B. Kizildemir",
+    "no": "97",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "356967",
+    "n": "Rayan Lutin",
+    "s": "R. Lutin",
+    "no": "93",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "380373",
+    "n": "Mohamed Khalil",
+    "s": "M. Khalil",
+    "no": "74",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "193526",
+    "n": "Mbaye Diagne",
+    "s": "M. Diagne",
+    "no": "45",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "288476",
+    "n": "Yira Sor",
+    "s": "Y. Sor",
+    "no": "11",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "296553",
+    "n": "Samuel Ballet",
+    "s": "S. Ballet",
+    "no": "10",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "342759",
+    "n": "Ermal Krasniqi",
+    "s": "E. Krasniqi",
+    "no": "7",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "356402",
+    "n": "Gift Orban",
+    "s": "G. Orban",
+    "no": "99",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "408537",
+    "n": "Dilhan Demir",
+    "s": "D. Demir",
+    "no": "77",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "3105622",
+    "n": "Muhammed Hasan Yıldırım",
+    "s": "M. Yıldırım",
+    "no": "19",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "3145223",
+    "n": "İsmail Duyu",
+    "s": "İ. Duyu",
+    "no": "30",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   }
+  ],
+  "last": {
+   "form": "4-2-3-1",
+   "st": [
+    {
+     "id": "231282",
+     "pa": "G",
+     "g": "G"
+    },
+    {
+     "id": "190262",
+     "pa": "CD-L",
+     "g": "D"
+    },
+    {
+     "id": "289594",
+     "pa": "CD-R",
+     "g": "D"
+    },
+    {
+     "id": "272195",
+     "pa": "LB",
+     "g": "D"
+    },
+    {
+     "id": "342759",
+     "pa": "RB",
+     "g": "D"
+    },
+    {
+     "id": "168385",
+     "pa": "AM",
+     "g": "M"
+    },
+    {
+     "id": "204793",
+     "pa": "LM",
+     "g": "M"
+    },
+    {
+     "id": "213101",
+     "pa": "RM",
+     "g": "M"
+    },
+    {
+     "id": "193526",
+     "pa": "F",
+     "g": "F"
+    },
+    {
+     "id": "356402",
+     "pa": "AM-L",
+     "g": "M"
+    },
+    {
+     "id": "108251",
+     "pa": "AM-R",
+     "g": "M"
+    }
+   ],
+   "ev": "401888371",
+   "date": "2026-11-07T16:00Z",
+   "vs": "Galatasaray"
+  }
+ },
+ {
+  "id": "1895",
+  "name": "Besiktas",
+  "short": "Besiktas",
+  "abbr": "BES",
+  "color": "#ffffff",
+  "alt": "#1a1a1a",
+  "logo": 1,
+  "players": [
+   {
+    "id": "205750",
+    "n": "Alexander Nübel",
+    "s": "A. Nübel",
+    "no": "1",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "278790",
+    "n": "Dogan Alemdar",
+    "s": "D. Alemdar",
+    "no": "80",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "368542",
+    "n": "Emir Yasar",
+    "s": "E. Yasar",
+    "no": "96",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "216420",
+    "n": "Amir Murillo",
+    "s": "A. Murillo",
+    "no": "62",
+    "g": "D",
+    "pa": "D",
+    "f": 1
+   },
+   {
+    "id": "280711",
+    "n": "Emir Han Topcu",
+    "s": "E. Topcu",
+    "no": "53",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "283682",
+    "n": "Tiago Djaló",
+    "s": "T. Djaló",
+    "no": "35",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "283691",
+    "n": "Ridvan Yilmaz",
+    "s": "R. Yilmaz",
+    "no": "33",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "308449",
+    "n": "Emmanuel Agbadou",
+    "s": "E. Agbadou",
+    "no": "12",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "340741",
+    "n": "Umit Akdag",
+    "s": "U. Akdag",
+    "no": "50",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "345243",
+    "n": "Kassoum Ouattara",
+    "s": "K. Ouattara",
+    "no": "11",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "346213",
+    "n": "Yasin Ozcan",
+    "s": "Y. Ozcan",
+    "no": "58",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "372033",
+    "n": "Taylan Bulut",
+    "s": "T. Bulut",
+    "no": "22",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "388235",
+    "n": "Mustafa Yortaç",
+    "s": "M. Yortaç",
+    "no": "63",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "187638",
+    "n": "Wilfred Ndidi",
+    "s": "W. Ndidi",
+    "no": "4",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "220705",
+    "n": "Milot Rashica",
+    "s": "M. Rashica",
+    "no": "7",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "225563",
+    "n": "Salih Özcan",
+    "s": "S. Özcan",
+    "no": "6",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "272700",
+    "n": "Orkun Kökçü",
+    "s": "O. Kökçü",
+    "no": "10",
+    "g": "M",
+    "pa": "M",
+    "f": 1
+   },
+   {
+    "id": "283930",
+    "n": "Kartal Kayra Yilmaz",
+    "s": "K. Yilmaz",
+    "no": "8",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "319985",
+    "n": "Junior Olaitan",
+    "s": "J. Olaitan",
+    "no": "15",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "323975",
+    "n": "Fabio Miretti",
+    "s": "F. Miretti",
+    "no": "21",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "3107403",
+    "n": "Ozan Sevim",
+    "s": "O. Sevim",
+    "no": "66",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "174980",
+    "n": "Leandro Trossard",
+    "s": "L. Trossard",
+    "no": "19",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "217476",
+    "n": "Václav Cerný",
+    "s": "V. Cerný",
+    "no": "18",
+    "g": "F",
+    "pa": "F",
+    "f": 1
+   },
+   {
+    "id": "235677",
+    "n": "Dusan Vlahovic",
+    "s": "D. Vlahovic",
+    "no": "28",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "302434",
+    "n": "Oh Hyeon-Gyu",
+    "s": "O. Hyeon-Gyu",
+    "no": "9",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "318534",
+    "n": "Ernest Poku",
+    "s": "E. Poku",
+    "no": "17",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "345212",
+    "n": "Semih Kiliçsoy",
+    "s": "S. Kiliçsoy",
+    "no": "90",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "368543",
+    "n": "Mustafa Hekimoglu",
+    "s": "M. Hekimoglu",
+    "no": "23",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "384290",
+    "n": "Ilhan Fakili",
+    "s": "I. Fakili",
+    "no": "29",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "416475",
+    "n": "Ahmet Bircan",
+    "s": "A. Bircan",
+    "no": "70",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   }
+  ],
+  "last": {
+   "form": "4-1-4-1",
+   "st": [
+    {
+     "id": "205750",
+     "pa": "G",
+     "g": "G"
+    },
+    {
+     "id": "280711",
+     "pa": "CD-L",
+     "g": "D"
+    },
+    {
+     "id": "308449",
+     "pa": "CD-R",
+     "g": "D"
+    },
+    {
+     "id": "225563",
+     "pa": "DM",
+     "g": "D"
+    },
+    {
+     "id": "283691",
+     "pa": "LB",
+     "g": "D"
+    },
+    {
+     "id": "216420",
+     "pa": "RB",
+     "g": "D"
+    },
+    {
+     "id": "272700",
+     "pa": "CM-L",
+     "g": "M"
+    },
+    {
+     "id": "187638",
+     "pa": "CM-R",
+     "g": "M"
+    },
+    {
+     "id": "384290",
+     "pa": "LM",
+     "g": "M"
+    },
+    {
+     "id": "174980",
+     "pa": "RM",
+     "g": "M"
+    },
+    {
+     "id": "235677",
+     "pa": "F",
+     "g": "F"
+    }
+   ],
+   "ev": "401888251",
+   "date": "2026-11-08T18:00Z",
+   "vs": "Genclerbirligi"
+  }
+ },
+ {
+  "id": "7656",
+  "name": "Caykur Rizespor",
+  "short": "Caykur Rizespor",
+  "abbr": "CAY",
+  "color": "#000000",
+  "alt": "#000000",
+  "logo": 1,
+  "players": [
+   {
+    "id": "261595",
+    "n": "Yahia Fofana",
+    "s": "Y. Fofana",
+    "no": "75",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "292144",
+    "n": "Zafer Görgen",
+    "s": "Z. Görgen",
+    "no": "30",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "400055",
+    "n": "Efe Dogan",
+    "s": "E. Dogan",
+    "no": "97",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "3128768",
+    "n": "Hasan Yağız Döne",
+    "s": "H. Döne",
+    "no": "31",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "245506",
+    "n": "Tayyib Talha Sanuc",
+    "s": "T. Talha Sanuc",
+    "no": "5",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "260782",
+    "n": "Attila Mocsi",
+    "s": "A. Mocsi",
+    "no": "4",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "266162",
+    "n": "Modibo Sagnan",
+    "s": "M. Sagnan",
+    "no": "93",
+    "g": "D",
+    "pa": "D",
+    "f": 1
+   },
+   {
+    "id": "303122",
+    "n": "Khusniddin Alikulov",
+    "s": "K. Alikulov",
+    "no": "2",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "367665",
+    "n": "Taha Sahin",
+    "s": "T. Sahin",
+    "no": "37",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "373422",
+    "n": "Siaka Bakayoko",
+    "s": "S. Bakayoko",
+    "no": "21",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "388794",
+    "n": "Zakaria Ariss",
+    "s": "Z. Ariss",
+    "no": "17",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3126864",
+    "n": "Umut Erdem",
+    "s": "U. Erdem",
+    "no": "19",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "218618",
+    "n": "Taylan Antalyali",
+    "s": "T. Antalyali",
+    "no": "14",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "226180",
+    "n": "Qazim Laçi",
+    "s": "Q. Laçi",
+    "no": "20",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "228546",
+    "n": "Moussa Diakité",
+    "s": "M. Diakité",
+    "no": "6",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "291634",
+    "n": "Dal Varesanovic",
+    "s": "D. Varesanovic",
+    "no": "8",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "303790",
+    "n": "Can Bozdogan",
+    "s": "C. Bozdogan",
+    "no": "70",
+    "g": "M",
+    "pa": "M",
+    "f": 1
+   },
+   {
+    "id": "306808",
+    "n": "Mithat Pala",
+    "s": "M. Pala",
+    "no": "54",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "413228",
+    "n": "Yakup Ayan",
+    "s": "Y. Ayan",
+    "no": "94",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "174010",
+    "n": "Ali Sowe",
+    "s": "A. Sowe",
+    "no": "9",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "266562",
+    "n": "Ahmed Kutucu",
+    "s": "A. Kutucu",
+    "no": "23",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "267008",
+    "n": "Valentin Mihaila",
+    "s": "V. Mihaila",
+    "no": "7",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "286948",
+    "n": "Gennaro Borrelli",
+    "s": "G. Borrelli",
+    "no": "29",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "299572",
+    "n": "Ibrahim Olawoyin",
+    "s": "I. Olawoyin",
+    "no": "10",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "328463",
+    "n": "Adedire Mebude",
+    "s": "A. Mebude",
+    "no": "11",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "365404",
+    "n": "Emrecan Bulut",
+    "s": "E. Bulut",
+    "no": "99",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "365752",
+    "n": "Emirhan Yilmaz",
+    "s": "E. Yilmaz",
+    "no": "47",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "375314",
+    "n": "Iustin Doicaru",
+    "s": "I. Doicaru",
+    "no": "79",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "3127782",
+    "n": "Mustafa Coşkun Tosun",
+    "s": "M. Tosun",
+    "no": "80",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   }
+  ],
+  "last": {
+   "form": "4-1-4-1",
+   "st": [
+    {
+     "id": "292144",
+     "pa": "G",
+     "g": "G"
+    },
+    {
+     "id": "373422",
+     "pa": "CD-L",
+     "g": "D"
+    },
+    {
+     "id": "260782",
+     "pa": "CD-R",
+     "g": "D"
+    },
+    {
+     "id": "228546",
+     "pa": "DM",
+     "g": "D"
+    },
+    {
+     "id": "388794",
+     "pa": "LB",
+     "g": "D"
+    },
+    {
+     "id": "306808",
+     "pa": "RB",
+     "g": "D"
+    },
+    {
+     "id": "226180",
+     "pa": "CM-L",
+     "g": "M"
+    },
+    {
+     "id": "299572",
+     "pa": "CM-R",
+     "g": "M"
+    },
+    {
+     "id": "266562",
+     "pa": "LM",
+     "g": "M"
+    },
+    {
+     "id": "328463",
+     "pa": "RM",
+     "g": "M"
+    },
+    {
+     "id": "174010",
+     "pa": "F",
+     "g": "F"
+    }
+   ],
+   "ev": "401888253",
+   "date": "2026-11-08T10:30Z",
+   "vs": "Erzurum BB"
+  }
+ },
+ {
+  "id": "132334",
+  "name": "Çorum FK",
+  "short": "Çorum FK",
+  "abbr": "COR",
+  "color": "#000000",
+  "alt": "#C60000",
+  "logo": 1,
+  "players": [
+   {
+    "id": "191997",
+    "n": "Marcos Felipe",
+    "s": "Marcos Felipe",
+    "no": "1",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "330710",
+    "n": "Erhan Erentürk",
+    "s": "E. Erentürk",
+    "no": "18",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "387502",
+    "n": "Arif Simsir",
+    "s": "A. Simsir",
+    "no": "54",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "230757",
+    "n": "Çaglar Söyüncü",
+    "s": "Ç. Söyüncü",
+    "no": "2",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "266015",
+    "n": "Huseyin Bulut",
+    "s": "H. Bulut",
+    "no": "22",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "287209",
+    "n": "Cemali Sertel",
+    "s": "C. Sertel",
+    "no": "88",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "292170",
+    "n": "Hrvoje Smolcic",
+    "s": "H. Smolcic",
+    "no": "6",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "306510",
+    "n": "Alexandre Penetra",
+    "s": "A. Penetra",
+    "no": "5",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "308739",
+    "n": "Serdar Saatci",
+    "s": "S. Saatci",
+    "no": "4",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "335861",
+    "n": "Andrei Borza",
+    "s": "A. Borza",
+    "no": "24",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3106689",
+    "n": "Arda Hilmi Şengül",
+    "s": "A. Şengül",
+    "no": "15",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "205323",
+    "n": "Fredy",
+    "s": "Fredy",
+    "no": "16",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "231175",
+    "n": "Atakan Akkaynak",
+    "s": "A. Akkaynak",
+    "no": "8",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "237455",
+    "n": "Ylber Ramadani",
+    "s": "Y. Ramadani",
+    "no": "20",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "249073",
+    "n": "Ahmed Ildiz",
+    "s": "A. Ildiz",
+    "no": "30",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "259179",
+    "n": "Markus Karlsbakk",
+    "s": "M. Karlsbakk",
+    "no": "8",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "292081",
+    "n": "Berat Özdemir",
+    "s": "B. Özdemir",
+    "no": "3",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "292231",
+    "n": "Gokhan Sazdagi",
+    "s": "G. Sazdagi",
+    "no": "11",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "296471",
+    "n": "Furkan Çetinkaya",
+    "s": "F. Çetinkaya",
+    "no": "",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "303049",
+    "n": "Mohammed Diomande",
+    "s": "M. Diomande",
+    "no": "10",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "306932",
+    "n": "Goktan Gurpuz",
+    "s": "G. Gurpuz",
+    "no": "21",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "414676",
+    "n": "Ermin Mahmic",
+    "s": "E. Mahmic",
+    "no": "26",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "82009",
+    "n": "Jesús Ramírez",
+    "s": "J. Ramírez",
+    "no": "19",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "174979",
+    "n": "Mame Thiam",
+    "s": "M. Thiam",
+    "no": "9",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "239706",
+    "n": "Cengiz Ünder",
+    "s": "C. Ünder",
+    "no": "7",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "298350",
+    "n": "Alexandros Kyziridis",
+    "s": "A. Kyziridis",
+    "no": "89",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "305554",
+    "n": "Youssoufa Moukoko",
+    "s": "Y. Moukoko",
+    "no": "14",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "364422",
+    "n": "Emircan Gürlük",
+    "s": "E. Gürlük",
+    "no": "17",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "376207",
+    "n": "Hasanege Akdogan",
+    "s": "H. Akdogan",
+    "no": "",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   }
+  ],
+  "last": {
+   "form": "4-2-3-1",
+   "st": [
+    {
+     "id": "191997",
+     "pa": "G",
+     "g": "G"
+    },
+    {
+     "id": "292170",
+     "pa": "CD-L",
+     "g": "D"
+    },
+    {
+     "id": "230757",
+     "pa": "CD-R",
+     "g": "D"
+    },
+    {
+     "id": "335861",
+     "pa": "LB",
+     "g": "D"
+    },
+    {
+     "id": "306510",
+     "pa": "RB",
+     "g": "D"
+    },
+    {
+     "id": "303049",
+     "pa": "AM",
+     "g": "M"
+    },
+    {
+     "id": "414676",
+     "pa": "LM",
+     "g": "M"
+    },
+    {
+     "id": "237455",
+     "pa": "RM",
+     "g": "M"
+    },
+    {
+     "id": "82009",
+     "pa": "F",
+     "g": "F"
+    },
+    {
+     "id": "298350",
+     "pa": "AM-L",
+     "g": "M"
+    },
+    {
+     "id": "239706",
+     "pa": "AM-R",
+     "g": "M"
+    }
+   ],
+   "ev": "401888372",
+   "date": "2026-11-08T13:00Z",
+   "vs": "Fenerbahce"
+  }
+ },
+ {
+  "id": "19267",
+  "name": "Erzurum BB",
+  "short": "Erzurum",
+  "abbr": "ERZ",
+  "color": "#000000",
+  "alt": "#C60000",
+  "logo": 1,
+  "players": [
+   {
+    "id": "153939",
+    "n": "Ertugrul Taskiran",
+    "s": "E. Taskiran",
+    "no": "1",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "290282",
+    "n": "Matija Orbanic",
+    "s": "M. Orbanic",
+    "no": "31",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "322837",
+    "n": "Erkan Anapa",
+    "s": "E. Anapa",
+    "no": "17",
+    "g": "G",
+    "pa": "G",
+    "f": 0
+   },
+   {
+    "id": "152836",
+    "n": "Mustafa Yumlu",
+    "s": "M. Yumlu",
+    "no": "22",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "203903",
+    "n": "Orhan Ovacikli",
+    "s": "O. Ovacikli",
+    "no": "53",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "257942",
+    "n": "Nihad Mujakic",
+    "s": "N. Mujakic",
+    "no": "18",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "290106",
+    "n": "Festy Ebosele",
+    "s": "F. Ebosele",
+    "no": "2",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "305852",
+    "n": "Guram Giorbelidze",
+    "s": "G. Giorbelidze",
+    "no": "15",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "307195",
+    "n": "Cengizhan Bayrak",
+    "s": "C. Bayrak",
+    "no": "23",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "347624",
+    "n": "Amar Gerxhaliu",
+    "s": "A. Gerxhaliu",
+    "no": "4",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3106688",
+    "n": "Taha İbrahim Rençber",
+    "s": "T. Rençber",
+    "no": "",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3124161",
+    "n": "Ömer Arda Kara",
+    "s": "Ö. Kara",
+    "no": "25",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3124162",
+    "n": "Yakup Kırtay",
+    "s": "Y. Kırtay",
+    "no": "3",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "3124167",
+    "n": "Emre Erdem",
+    "s": "E. Erdem",
+    "no": "",
+    "g": "D",
+    "pa": "D",
+    "f": 0
+   },
+   {
+    "id": "160974",
+    "n": "Martín Rodríguez",
+    "s": "M. Rodríguez",
+    "no": "65",
+    "g": "M",
+    "pa": "M",
+    "f": 1
+   },
+   {
+    "id": "214311",
+    "n": "Miguel Cardoso",
+    "s": "M. Cardoso",
+    "no": "20",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "266057",
+    "n": "Elisha Owusu",
+    "s": "E. Owusu",
+    "no": "42",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "266572",
+    "n": "Sefa Akgün",
+    "s": "S. Akgün",
+    "no": "8",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "276264",
+    "n": "Brandon Baiye",
+    "s": "B. Baiye",
+    "no": "6",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "334129",
+    "n": "Lawrence Agyekum",
+    "s": "L. Agyekum",
+    "no": "77",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "3104895",
+    "n": "Emirhan Acar",
+    "s": "E. Acar",
+    "no": "21",
+    "g": "M",
+    "pa": "M",
+    "f": 0
+   },
+   {
+    "id": "180758",
+    "n": "Eren Tozlu",
+    "s": "E. Tozlu",
+    "no": "10",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "199663",
+    "n": "Gyrano Kerk",
+    "s": "G. Kerk",
+    "no": "9",
+    "g": "F",
+    "pa": "F",
+    "f": 1
+   },
+   {
+    "id": "308726",
+    "n": "Ibrahim Diabate",
+    "s": "I. Diabate",
+    "no": "19",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "308833",
+    "n": "Mustafa Fettahoglu",
+    "s": "M. Fettahoglu",
+    "no": "99",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   },
+   {
+    "id": "346634",
+    "n": "Nariman Akhundzade",
+    "s": "N. Akhundzade",
+    "no": "90",
+    "g": "F",
+    "pa": "F",
+    "f": 0
+   }
+  ],
+  "last": {
+   "form": "5-4-1",
+   "st": [
+    {
+     "id": "153939",
+     "pa": "G",
+     "g": "G"
+    },
+    {
+     "id": "347624",
+     "pa": "CD",
+     "g": "D"
+    },
+    {
+     "id": "257942",
+     "pa": "CD-L",
+     "g": "D"
+    },
+    {
+     "id": "203903",
+     "pa": "CD-R",
+     "g": "D"
+    },
+    {
+     "id": "305852",
+     "pa": "LB",
+     "g": "D"
+    },
+    {
+     "id": "290106",
+     "pa": "RB",
+     "g": "D"
+    },
+    {
+     "id": "266057",
+     "pa": "CM-L",
+     "g": "M"
+    },
+    {
+     "id": "276264",
+     "pa": "CM-R",
+     "g": "M"
+    },
+    {
+     "id": "214311",
+     "pa": "LM",
+     "g": "M"
+    },
+    {
+     "id": "199663",
+     "pa": "RM",
+     "g": "M"
+    },
+    {
+     "id": "308726",
+     "pa": "F",
+     "g": "F"
+    }
+   ],
+   "ev": "401888253",
+   "date": "2026-11-08T10:30Z",
+   "vs": "Caykur Rizespor"
+  }
+ }
+]

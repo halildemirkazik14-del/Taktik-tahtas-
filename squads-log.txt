@@ -1,0 +1,80 @@
+== Süper Lig (tur.1)
+   18 takım, 18 tanesinde kadro var
+== Premier Lig (eng.1)
+   20 takım, 20 tanesinde kadro var
+== La Liga (esp.1)
+   20 takım, 20 tanesinde kadro var
+== Serie A (ita.1)
+   20 takım, 20 tanesinde kadro var
+== Bundesliga (ger.1)
+   18 takım, 18 tanesinde kadro var
+== Ligue 1 (fra.1)
+   18 takım, 18 tanesinde kadro var
+Son maç ilk 11'i: 114/114 takım
+  ! https://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F111.png&w=128&h=128 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F115.png&w=128&h=128 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F268.png&w=128&h=128 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F126.png&w=128&h=128 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F169.png&w=128&h=128 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/318534.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/284718.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/286774.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/353951.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/184550.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/259653.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/261598.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/301869.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/324582.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/294039.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/259481.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/181192.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/236721.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/263202.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/304572.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/310134.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/309651.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+  ! https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/250758.png&w=96&h=70&scale=crop&cquality=60 → HTTP 503
+{
+  "updated": "2026-11-09T11:39:12.109Z",
+  "leagues": {
+    "tur.1": {
+      "name": "Süper Lig",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 530
+    },
+    "eng.1": {
+      "name": "Premier Lig",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 603
+    },
+    "esp.1": {
+      "name": "La Liga",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 628
+    },
+    "ita.1": {
+      "name": "Serie A",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 655
+    },
+    "ger.1": {
+      "name": "Bundesliga",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 541
+    },
+    "fra.1": {
+      "name": "Ligue 1",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 529
+    }
+  },
+  "lastXI": 114,
+  "faces": 117,
+  "logos": 114
+}
