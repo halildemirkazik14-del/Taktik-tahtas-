@@ -1,0 +1,57 @@
+== Süper Lig (tur.1)
+   18 takım, 18 tanesinde kadro var
+== Premier Lig (eng.1)
+   20 takım, 20 tanesinde kadro var
+== La Liga (esp.1)
+   20 takım, 20 tanesinde kadro var
+== Serie A (ita.1)
+   20 takım, 20 tanesinde kadro var
+== Bundesliga (ger.1)
+   18 takım, 18 tanesinde kadro var
+== Ligue 1 (fra.1)
+   18 takım, 18 tanesinde kadro var
+Son maç ilk 11'i: 114/114 takım
+{
+  "updated": "2026-11-23T12:54:31.874Z",
+  "leagues": {
+    "tur.1": {
+      "name": "Süper Lig",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 538
+    },
+    "eng.1": {
+      "name": "Premier Lig",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 604
+    },
+    "esp.1": {
+      "name": "La Liga",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 643
+    },
+    "ita.1": {
+      "name": "Serie A",
+      "teams": 20,
+      "withSquad": 20,
+      "players": 658
+    },
+    "ger.1": {
+      "name": "Bundesliga",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 542
+    },
+    "fra.1": {
+      "name": "Ligue 1",
+      "teams": 18,
+      "withSquad": 18,
+      "players": 532
+    }
+  },
+  "lastXI": 114,
+  "faces": 135,
+  "logos": 114
+}
