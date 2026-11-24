@@ -19,6 +19,7 @@ düzelttiriyorsan buraya ekle. Ayrıntılı kaynak: `akici-poster-edit-dili` ski
 - Claude (Cloud değil)
 - Demirkazık
 - HyperFrames
+- Real'e (reale değil), Rodrygo (Rodrigo değil), Ferland Mendy (Ferran Mendi değil), Mbappé, Valverde, Camavinga, Paris Saint-Germain
 
 ## Format
 - Shorts: 1080x1920, sahne başına ~1,8–2,6 sn, son 1–1,7 sn imza/kanal adı, loop'a hazır.
