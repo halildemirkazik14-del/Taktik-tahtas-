@@ -11,3 +11,9 @@ www/data/faces/
 *.keystore
 *.jks
 *.p12
+# video-kurgu: medya dosyaları depoya girmesin
+video-kurgu/**/*.mp4
+video-kurgu/**/*.mov
+video-kurgu/**/*.wav
+video-kurgu/**/*.mp3
+video-kurgu/**/*.webm
